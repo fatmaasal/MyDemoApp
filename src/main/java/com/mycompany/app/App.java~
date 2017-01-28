@@ -26,9 +26,9 @@ public class App
     {
         port(getHerokuAssignedPort());
 
-        get("/", (req, res) -> "Hello, World");
+        get("/", (req, res, res) -> "Hello, World");
 
-        post("/compute", (req, res) -> {
+        post("/compute", (req, res, res) -> {
           //System.out.println(req.queryParams("input1"));
           //System.out.println(req.queryParams("input2"));
 	 //System.out.println(req.queryParams("input3"));
@@ -75,5 +75,5 @@ public class App
             }
             return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
         }
-    }
 }
+

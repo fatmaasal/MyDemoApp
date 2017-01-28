@@ -26,9 +26,9 @@ public class App
     {
         port(getHerokuAssignedPort());
 
-        get("/", (req, res) -> "Hello, World");
+        get("/", (req,req, res) -> "Hello, World");
 
-        post("/compute", (req, res) -> {
+        post("/compute", (req,req, res) -> {
           //System.out.println(req.queryParams("input1"));
           //System.out.println(req.queryParams("input2"));
 	 //System.out.println(req.queryParams("input3"));
