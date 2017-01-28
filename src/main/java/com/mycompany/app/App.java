@@ -26,9 +26,9 @@ public class App
     {
         port(getHerokuAssignedPort());
 
-        get("/", (req,req, res) -> "Hello, World");
+        get("/", (req,res) -> "Hello, World");
 
-        post("/compute", (req,req, res) -> {
+        post("/compute", (req, res) -> {
           //System.out.println(req.queryParams("input1"));
           //System.out.println(req.queryParams("input2"));
 	 //System.out.println(req.queryParams("input3"));
@@ -70,6 +70,7 @@ public class App
 
         static int getHerokuAssignedPort() {
             ProcessBuilder processBuilder = new ProcessBuilder();
+	    
             if (processBuilder.environment().get("PORT") != null) {
                 return Integer.parseInt(processBuilder.environment().get("PORT"));
             }
